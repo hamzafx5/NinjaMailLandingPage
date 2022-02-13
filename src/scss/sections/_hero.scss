@@ -1,0 +1,58 @@
+@use "../helpers/mixins" as *;
+
+.hero {
+	position: relative;
+	padding: 140px 0 60px 0;
+	@include for-tablet-down {
+		padding-top: 66px;
+	}
+	@include for-tablet-up {
+		display: flex;
+		align-items: center;
+	}
+}
+
+.hero--left-col {
+	padding: 20px 0;
+	z-index: 2;
+	flex-basis: 50%;
+	@include for-desktop-up {
+		flex-basis: 45%;
+	}
+	@include for-tablet-down {
+		h1 {
+			margin-bottom: 40vw;
+		}
+	}
+	@include for-phone-down {
+		h1 {
+			margin-bottom: 50vw;
+		}
+	}
+	p {
+		margin-bottom: 19px;
+	}
+	button:first-of-type {
+		margin-right: 1rem;
+	}
+}
+
+.hero--right-col {
+	flex-basis: 50%;
+	@include for-desktop-up {
+		flex-basis: 55%;
+	}
+	@include for-tablet-down {
+		position: absolute;
+		top: 128px;
+		z-index: -1;
+	}
+	img {
+		width: 120% !important;
+		transform: translateX(-12%);
+		@include for-tablet-down {
+			width: 100% !important;
+			transform: translateX(0);
+		}
+	}
+}

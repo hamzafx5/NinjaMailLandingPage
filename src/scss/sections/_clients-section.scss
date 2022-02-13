@@ -1,0 +1,36 @@
+@use "../helpers/variables" as var;
+@use "../helpers/mixins" as *;
+
+.client-section {
+	@include for-tablet-up {
+		display: flex;
+		gap: 1.5rem;
+		& > div {
+			flex-grow: 1 !important;
+			margin-bottom: unset !important;
+		}
+	}
+	.client-card:not(:last-of-type) {
+		margin-bottom: 1.5rem;
+	}
+	.client-card {
+		position: relative;
+		img {
+			width: 100%;
+		}
+		&--name {
+			position: absolute;
+			bottom: 2.5rem;
+			color: #fff;
+			left: 1.5rem;
+			font-family: inherit;
+		}
+		&--member-since {
+			position: absolute;
+			bottom: 1.5rem;
+			color: #fff;
+			left: 1.5rem;
+			font-weight: var.$fw-bold;
+		}
+	}
+}

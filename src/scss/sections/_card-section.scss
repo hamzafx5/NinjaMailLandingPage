@@ -1,0 +1,62 @@
+@use "../helpers/variables" as var;
+@use "../helpers/mixins" as *;
+
+.card-section {
+	width: 100%;
+	position: relative;
+	overflow: visible;
+	padding: 100px 0;
+	& > div {
+		@include for-laptop-up {
+			display: flex;
+			gap: 1.5rem;
+			padding-bottom: 100px;
+		}
+	}
+	.left {
+		@include for-laptop-down {
+			margin-bottom: 2rem !important;
+			width: 88% !important;
+			max-width: 340px;
+		}
+	}
+
+	.right {
+		@include for-laptop-down {
+			margin-bottom: 2rem !important;
+			width: 88% !important;
+			margin-left: auto;
+			max-width: 340px;
+		}
+		@include for-laptop-up {
+			position: relative;
+			top: 70px;
+		}
+	}
+	.about_service {
+		@include for-laptop-down {
+			width: 80%;
+		}
+		@include for-tablet-down {
+			width: 90%;
+		}
+		@include for-phone-down {
+			width: 100%;
+		}
+		@include for-laptop-up {
+			position: relative;
+			top: 130px;
+		}
+	}
+	&::before {
+		content: "";
+		z-index: -1;
+		position: absolute;
+		top: 0;
+		left: -50vw;
+		width: 200vw;
+		height: 100%;
+		background: var.$accent-clr-light;
+		transform: rotate(-9deg);
+	}
+}

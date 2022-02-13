@@ -1,0 +1,15 @@
+.learn-how {
+	max-width: 900px;
+	width: calc(100% - 2rem);
+	margin: 2rem auto 0;
+	aspect-ratio: 16/9;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	color: #fff;
+	text-align: center;
+}

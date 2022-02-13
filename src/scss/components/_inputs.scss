@@ -1,0 +1,15 @@
+@use "../helpers/variables" as var;
+
+.input {
+	height: 42px;
+	background: #ffffff;
+	border: 1px solid #9f9f9f;
+	border-radius: 5px;
+	outline: none;
+	padding: 0 0.6rem;
+	font: inherit;
+}
+
+.input:focus {
+	border-color: var.$accent-clr;
+}

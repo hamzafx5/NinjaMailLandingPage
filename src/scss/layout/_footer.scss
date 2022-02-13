@@ -1,0 +1,49 @@
+@use "../helpers/mixins" as *;
+@use "../helpers/variables" as var;
+
+.footer {
+	padding: 55px 0;
+	&--links-box {
+		margin-bottom: 30px;
+		display: flex;
+		gap: 1rem;
+		.footer--brand {
+			flex-grow: 3;
+		}
+		@include for-tablet-down {
+			flex-wrap: wrap;
+			.footer--brand {
+				flex-grow: unset;
+				flex-basis: 100% !important;
+			}
+			.footer--links-list {
+				flex-grow: unset;
+				flex-basis: 48% !important;
+			}
+		}
+	}
+	&--links-list {
+		flex-grow: 1;
+		list-style: none;
+		li {
+			margin-bottom: 0.3rem;
+			a {
+				color: #000;
+				font-weight: var.$fw-bold;
+				&:hover {
+					color: var.$accent-clr;
+					border-bottom: 2px solid var.$accent-clr;
+				}
+			}
+		}
+	}
+
+	&--copy-right {
+		display: block;
+		font-size: 80%;
+		text-align: center;
+		color: #000;
+		border-top: 1px solid #ddd;
+		padding-top: 30px;
+	}
+}

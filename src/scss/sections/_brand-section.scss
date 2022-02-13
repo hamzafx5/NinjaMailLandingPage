@@ -1,0 +1,30 @@
+@use "../helpers/mixins" as *;
+
+.brand {
+	padding: 2rem 1rem 4rem;
+	display: flex;
+	max-width: max-content;
+	margin: 0 auto;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	@include for-tablet-down {
+		justify-content: space-between;
+	}
+	&--title {
+		text-align: center;
+		flex-basis: 100%;
+		margin-bottom: 1em;
+	}
+	&--box {
+		padding: 1rem;
+		@include for-tablet-down {
+			flex-basis: 50%;
+			display: flex;
+			justify-content: center;
+		}
+		img {
+			max-width: 100%;
+		}
+	}
+}

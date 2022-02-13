@@ -1,0 +1,33 @@
+@use "../helpers/mixins" as *;
+
+.contact {
+	padding: 2.5rem 0;
+	text-align: center;
+	&--title {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 1em;
+		max-width: 30ch;
+	}
+	&--form-box {
+		@include for-tablet-up {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			justify-content: center;
+			gap: 1rem;
+			input {
+				flex-grow: 1;
+				max-width: 400px;
+			}
+		}
+
+		input {
+			@include for-tablet-down {
+				width: 100% !important;
+				margin-bottom: 1rem;
+			}
+		}
+	}
+}
